@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payments</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333333;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .payment-method {
+            text-align: center;
+            padding: 20px;
+            background-color: #3498db;
+            color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .payment-method:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Choose Your Payment Method</h1>
+
+    <div class="payment-methods">
+        <div class="payment-method" onclick="showPaymentDetails('credit_card')">Credit Card</div>
+        <div class="payment-method" onclick="showPaymentDetails('paypal')">PayPal</div>
+        <div class="payment-method" onclick="showPaymentDetails('bitcoin')">Bitcoin</div>
+    </div>
+
+    <div id="credit_card_details" style="display: none;">
+        <h2>Credit Card Details</h2>
+        <!-- Credit Card Form (for illustration purposes) -->
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number" placeholder="Enter card number">
+
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY">
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" placeholder="CVV">
+    </div>
+
+    <div id="paypal_details" style="display: none;">
+        <h2>PayPal</h2>
+        <!-- PayPal Login/Buttons (for illustration purposes) -->
+        <p>Login to your PayPal account or use the guest checkout option.</p>
+        <button onclick="processPayment('paypal')">Proceed with PayPal</button>
+    </div>
+
+    <div id="bitcoin_details" style="display: none;">
+        <h2>Bitcoin</h2>
+        <!-- Bitcoin Address/QR Code (for illustration purposes) -->
+        <p>Send your payment to the following Bitcoin address:</p>
+        <p>1ABCdEfGhijKLMNoPqRstUVwxyZ</p>
+        <!-- QR Code Image (you would typically generate this dynamically based on the address) -->
+        <img src="QRcode.png" alt="Bitcoin QR Code">
+    </div>
+</div>
+
+<script>
+    function showPaymentDetails(method) {
+        // Hide all payment details
+        document.getElementById('credit_card_details').style.display = 'none';
+        document.getElementById('paypal_details').style.display = 'none';
+        document.getElementById('bitcoin_details').style.display = 'none';
+
+        // Show the selected payment details
+        document.getElementById(${method}_details).style.display = 'block';
+    }
+
+    function processPayment(method) {
+        // Implement payment processing logic here
+        alert(Processing payment with ${method});
+    }
+</script>
+
+</body>
+</html>
