@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Portal</title>
+    <style>
+        /* Your login page styles */
+        body.login-page {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(CareerCounsellingBg1.jpg) center/cover; /* Replace 'your-login-background-image.jpg' with your actual image path */
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #555555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #1a252f;
+        }
+
+        /* Your career guidance and FAQ page styles */
+        .career-guidance {
+            display: none; /* Initially hidden */
+        }
+
+        .header {
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .sub-heading {
+            display: flex;
+            justify-content: space-between; /* Adjusted for spacing */
+            margin: 20px 0;
+        }
+
+        .sub-heading div {
+            flex: 1;
+            margin: 0 10px; /* Added spacing between sub-headings */
+        }
+
+        .icon {
+            display: inline-block;
+            font-size: 24px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .icon:hover {
+            color: #3498db;
+        }
+
+        .faq {
+            text-align: left;
+            margin-top: 40px;
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 400px;
+            z-index: 1;
+        }
+
+        .faq h2 {
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .faq p {
+            color: #555555;
+            margin-bottom: 20px;
+        }
+
+        .toggle-faq {
+            cursor: pointer;
+            color: #3498db;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        /* Navigation bar styles */
+        .navigation-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            color: #ffffff;
+        }
+
+        .navigation-link {
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="login-page">
+
+<!-- Navigation Bar -->
+<div class="navigation-bar">
+    <div class="navigation-link" onclick="navigateTo('about_us.html')">About Us</div>
+    <div class="navigation-link" onclick="navigateTo('services.html')">Services</div>
+</div>
+
+<!-- Login Page -->
+<div id="loginPage">
+    <div class="login-container">
+        <h2>Login to Career Portal</h2>
+        <form class="login-form" onsubmit="login(); return false;">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Career Guidance and FAQ Page -->
+<div id="careerGuidance" class="career-guidance">
+    <div class="header">
+        <h1>Hey Animesh!! What Career guidance do you want?</h1>
+    </div>
+
+    <div class="section">
+        <div class="sub-heading">
+            <div>
+                <span class="icon" onclick="navigateTo('career_counselling_online.html')">🌐</span>
+                <p>Online Career Counselling</p>
+            </div>
+            <div>
+                <span class="icon" onclick="navigateTo('career_counselling_offline.html')">🏠</span>
+                <p>Offline Career Counselling</p>
+            </div>
+            <div>
+                <span class="icon" onclick="navigateTo('exams.html')">📚</span>
+                <p>Which exams you should give?</p>
+            </div>
+            <div>
+                <span class="icon" onclick="navigateTo('career_opportunities.html')">💼</span>
+                <p>Career Opportunities</p>
+            </div>
+            <div>
+                <span class="icon" onclick="navigateTo('iq_counselling.html')">🧠</span>
+                <p>IQ based Career Counselling</p>
+            </div>
+            <div class="toggle-faq" onclick="toggleFAQ()">FAQs</div>
+        </div>
+    </div>
+
+    <!-- FAQs Section -->
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div>
+            <h3>What is online career counseling?</h3>
+            <p>Online career counseling is a service provided through digital platforms where individuals receive guidance and support in making informed decisions about their career paths. It often involves assessments, discussions, and personalized advice.</p>
+        </div>
+
+        <div>
+            <h3>How does online career counseling work?</h3>
+            <p>Typically, online career counseling involves virtual sessions with a career counselor via video calls, chat, or email. The process may include discussions about interests, skills, goals, and the exploration of potential career options.</p>
+        </div>
+
+        <div>
+            <h3>Why should I consider online career counseling?</h3>
+            <p>Online career counseling offers convenience, flexibility, and accessibility. It allows individuals to seek professional guidance from the comfort of their homes, overcoming geographical barriers.</p>
+        </div>
+        <div>
+            <h3>Is online career counseling suitable for students?</h3>
+            <p> Yes, online career counseling is beneficial for students at various stages, including high school, college, and post-graduation. It helps them choose majors, plan academic paths, and make informed decisions about their future careers.</p>   
+        </div>   
+        <div>
+            <h3>How do I find a reputable online career counselor?</h3>
+            <p>Look for counselors with relevant qualifications and experience. Check reviews, testimonials, or recommendations. Many counseling platforms and organizations offer verified professionals.</p>
+        </div>   
+        <div>      
+            <h3>Is online career counseling confidential?</h3>              
+            <p>Yes, ethical online career counseling services prioritize client confidentiality. Counselors adhere to professional standards and guidelines to protect the privacy of individuals seeking guidance.</p> 
+        </div>
+
+        <!-- Add more FAQ items as needed -->
+
+        <div class="toggle-faq" onclick="toggleFAQ()">Close FAQs</div>
+    </div>
+</div>
+
+<script>
+    function login() {
+        // Simulate successful login (you can add real authentication logic here)
+        // For demonstration purposes, always redirect to the career guidance page
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('careerGuidance').style.display = 'block';
+    }
+
+    function navigateTo(page) {
+        // You can add actual navigation logic here, e.g., window.location.href = page;
+        console.log(Navigating to ${page});
+    }
+
+    function toggleFAQ() {
+        var faqSection = document.querySelector('.faq');
+        faqSection.style.display = (faqSection.style.display === 'none' || faqSection.style.display === '') ? 'block' : 'none';
+    }
+</script>
+
+</body>
+</html>
